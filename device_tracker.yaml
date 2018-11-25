@@ -1,0 +1,15 @@
+# NMAP
+- platform: nmap_tracker
+  hosts: 192.168.1.0/24
+  home_interval: 10
+  consider_home: 6000
+# ASUS router (https://www.home-assistant.io/components/device_tracker.asuswrt/)
+#- platform: asuswrt
+#  host: 192.168.1.1
+#  username: admin
+#  password: hejhej
+#  new_device_defaults:
+#    track_new_devices: True
+#    hide_if_away: False
+# GPS (like OwnTracks or GPSLogger, https://www.home-assistant.io/components/device_tracker.gpslogger)
+#- platform: gpslogger

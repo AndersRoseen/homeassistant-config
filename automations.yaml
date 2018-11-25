@@ -1,0 +1,23 @@
+# Test automation
+- alias: 'Test time notification'
+  hide_entity: false
+  trigger:
+    # Start the automation
+    platform: time
+    at: '14:56:00'
+  action:
+    service: persistent_notification.create
+    data:
+      title: "A notification appeared!"
+      message: "Here is a message"
+
+# Random number notifications
+- alias: Check sensor value and show notification
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.random_sensor
+    above: 20
+  action:
+    service: persistent_notification.create
+    data:
+      message: "Sensor value greater than 10"
