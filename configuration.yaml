@@ -50,6 +50,14 @@ sensor:
   # Weather prediction
   - platform: yr
   - platform: random
+  - platform: sl
+    name: home
+    ri4key: YOUR-RI4-KEY-HERE
+    si2key: YOUR-SI2-KEY-HERE
+    siteid: 9204
+    lines: 14, 4, 6, 61, 67
+#    direction: 1
+#    sensor: binary_sensor.test
 
 # Text to speech
 tts:
