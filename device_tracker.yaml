@@ -1,8 +1,8 @@
 # NMAP
 - platform: nmap_tracker
-  hosts: 192.168.1.0/24
   home_interval: 10
-  consider_home: 6000
+  hosts: 192.168.1.0/24
+  consider_home: 600
 # ASUS router (https://www.home-assistant.io/components/device_tracker.asuswrt/)
 #- platform: asuswrt
 #  host: 192.168.1.1
@@ -13,3 +13,5 @@
 #    hide_if_away: False
 # GPS (like OwnTracks or GPSLogger, https://www.home-assistant.io/components/device_tracker.gpslogger)
 #- platform: gpslogger
+# Bluetooth
+#- platform: bluetooth_tracker
