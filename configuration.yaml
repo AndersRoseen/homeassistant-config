@@ -50,12 +50,12 @@ sensor:
   # Weather prediction
   - platform: yr
   - platform: random
-  - platform: sl
-    name: home
-    ri4key: YOUR-RI4-KEY-HERE
-    si2key: YOUR-SI2-KEY-HERE
-    siteid: 9204
-    lines: 14, 4, 6, 61, 67
+#  - platform: sl
+#    name: home
+#    ri4key: !secret trafiklab_ri4key
+#    si2key: !secret trafiklab_si2key
+#    siteid: 9204 # Tekniska högskolan
+#    lines: 14
 #    direction: 1
 #    sensor: binary_sensor.test
 
@@ -68,6 +68,8 @@ media_player:
   - platform: spotify
     client_id: !secret spotify_client_id
     client_secret: !secret spotify_client_secret
+  - platform: mpd
+    host: !secret hassio_ip
 
 # Cloud
 #cloud:
