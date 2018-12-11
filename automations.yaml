@@ -1,23 +1,104 @@
-# Test automation
-- alias: 'Test time notification'
+#####################################################
+#                  Test automations
+#####################################################
+- alias: 'Test notification'
   hide_entity: false
   trigger:
-    # Start the automation
-    platform: time
-    at: '14:56:00'
+    platform: numeric_state
+    entity_id: sensor.random_sensor
+    above: 20  # Max=20
   action:
     service: persistent_notification.create
     data:
       title: "A notification appeared!"
       message: "Here is a message"
 
-# Random number notifications
-- alias: Check sensor value and show notification
+- alias: 'Test tts' # doesnt work
+  hide_entity: false
   trigger:
     platform: numeric_state
     entity_id: sensor.random_sensor
-    above: 20
+    above: 20  # Max=20
   action:
-    service: persistent_notification.create
+    service: tts.google_say
+    entity_id: media_player.mpd
     data:
-      message: "Sensor value greater than 10"
+      message: 'Go to bed now'
+      
+# - alias: 'Test mp3' # doesnt work
+#   hide_entity: false
+#   trigger:
+#     platform: time
+#     at: '22:50:00'
+#   action:
+#     service: media_player.play_media
+#     data:
+#       entity_id: media_player.mpd
+#       media_content_id: 'https://hassio.local:8123/local/01_oevningskoera-cia.mp3'
+#       media_content_type: 'music'
+
+# - alias: 'Test Spotify'
+#   hide_entity: false
+#   trigger:
+#     platform: time
+#     at: '23:15:00'
+#   action:
+#     service: media_player.play_media
+#     data:
+#       entity_id: media_player.spotify
+#       media_content_id: 'spotify:user:spotify:playlist:37i9dQZF1DX2MyUCsl25eb' # Morning Commute
+#       media_content_type: 'playlist'
+
+
+#####################################################
+#                 Welcome home
+#####################################################
+# Play Spotify when coming home
+# - alias: 'Welcome home - Have some music'
+#   hide_entity: false
+#   trigger:
+#     platform: state
+#     entity_id: device_tracker.oneplus_3
+#     to: 'home'
+#   condition:
+#     platform: time
+#     after: '16:00:00'
+#     before: '23:00:00'
+#   action:
+#     service: media_player.play_media
+#     data:
+#       entity_id: media_player.spotify
+#       media_content_id: 'spotify:user:spotify:playlist:37i9dQZF1DX2MyUCsl25eb' # Morning Commute
+#       media_content_type: 'playlist'
+#       volume_level: '0.4'
+
+#####################################################
+#                  Wake up
+#####################################################
+#- alias: 'Good morning'
+#  hide_entity: false
+#  trigger:
+#    platform: sun
+#    event: sunrise
+#  condition:
+#    platform: time
+#    after: '07:00:00'
+#  action:
+#    service: tts.google_say
+#    data:
+#      message: 'Nu är det dags att gå upp. Klockan är {{ now() }}'
+#      language: 'sv'
+
+#####################################################
+#                  Go to bed
+#####################################################
+#- alias: 'Good night'
+#  hide_entity: false
+#  trigger:
+#    platform: time
+#    at: '23:00:00'
+#  action:
+#    service: light.turn_on
+#    entity_id: light.bedroom
+#    data:
+#      transition: 900
