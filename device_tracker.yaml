@@ -4,14 +4,8 @@
   hosts: 192.168.1.0/24
   consider_home: 600
   interval_seconds: 24
-# ASUS router (https://www.home-assistant.io/components/device_tracker.asuswrt/)
-#- platform: asuswrt
-#  host: 192.168.1.1
-#  username: admin
-#  password: hejhej
-#  new_device_defaults:
-#    track_new_devices: True
-#    hide_if_away: False
+  exclude: !secret hassio_ip
+
 # GPS (like OwnTracks or GPSLogger, https://www.home-assistant.io/components/device_tracker.gpslogger)
 #- platform: gpslogger
 # Bluetooth
