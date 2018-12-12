@@ -79,6 +79,10 @@ media_player:
 # Device tracker
 device_tracker: !include device_tracker.yaml
 
+# Lights
+tradfri:
+  host: !secret tradfri_gateway_ip
+
 # Switches (test)
 switch: !include switches.yaml
 
