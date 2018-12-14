@@ -54,6 +54,7 @@
 #              HA startup actions
 #####################################################
 - alias: 'Set theme at startup'
+  hide_entity: true
   initial_state: 'on'
   trigger:
    - platform: homeassistant
