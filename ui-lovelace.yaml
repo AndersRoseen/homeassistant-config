@@ -1,0 +1,54 @@
+title: Home Assistant
+
+excluded_entities:
+  - media_player.mpd
+  # Temporary
+  - switch.blind
+  - automation.test_tts
+
+background: center / cover no-repeat url("/local/background.png") fixed
+
+views:
+  - icon: mdi:home
+    path: home
+    cards:
+      - type: markdown
+        title: Welcome
+        content: >
+          What can I do for you?
+      - type: entities
+        title: Lights
+        entities:
+          - light.farstun
+          - light.koket
+          - light.vardagsrum
+      - type: entities
+        title: Automations
+        entities:
+          - automation.welcome_home_lights
+          - automation.byebye_lights
+          - automation.test_notification
+  - icon: mdi:map
+    panel: true
+    cards:
+    - type: map
+      entities:
+        - device_tracker.oneplus_3
+        - zone.home
+        - zone.work
+  - icon: mdi:music
+    path: music
+    cards:
+      - type: entities
+        title: Spotify
+        entities:
+          - media_player.spotify
+  - icon: mdi:lightbulb-on
+    path: lights
+    cards:
+      - type: entities
+        title: Lights
+        entities:
+          - light.farstun
+          - light.koket
+          - light.vardagsrum
