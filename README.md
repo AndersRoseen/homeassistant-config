@@ -1,4 +1,12 @@
 # Home Assistant Configuration
 
-Here's my Home Assistant configuration.
+This is my Home Assistant configuration.
 
+## Hardware
+RPi 3 Model B
+3.5mm Speakers
+Ikea Trådfri light bulbs and gateway
+
+## Resources
+Icons:
+https://materialdesignicons.com/
