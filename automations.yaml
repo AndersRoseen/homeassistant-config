@@ -72,6 +72,36 @@
 #       media_content_type: 'playlist'
 #       volume_level: '0.4'
 
+# Turn on the lights
+- alias: 'Welcome home lights'
+  hide_entity: false
+  trigger:
+    platform: state
+    entity_id: device_tracker.oneplus_3
+    to: 'home'
+  condition:
+    condition: time
+    after: '14:00:00'
+    before: '23:00:00'
+  action:
+    service: light.turn_on
+    data:
+      entity_id: group.lights
+      kelvin: 3000
+      brightness: 20
+
+# Turn off the lights
+- alias: 'Byebye lights'
+  hide_entity: false
+  trigger:
+    platform: state
+    entity_id: device_tracker.oneplus_3
+    to: 'not_home'
+  action:
+    service: light.turn_off
+    data:
+      entity_id: group.lights
+
 #####################################################
 #                  Wake up
 #####################################################

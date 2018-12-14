@@ -1,0 +1,16 @@
+# Lights
+lights:
+  name: All lights
+  entities:
+    - group.lights_hallway
+    - group.lights_livingroom
+
+lights_hallway:
+  name: Hallway lights
+  entities:
+      - light.farstun
+      - light.koket
+lights_livingroom:
+  name: Livingroom lights
+  entities:
+      - light.vardagsrum
