@@ -86,17 +86,27 @@
 #       media_content_type: 'playlist'
 #       volume_level: '0.4'
 
-# Turn on the lights
+# Turn on the lights - first home
 - alias: 'Welcome home lights'
   hide_entity: false
   trigger:
     platform: state
-    entity_id: device_tracker.oneplus_3
+    entity_id: device_tracker.oneplus_3, device_tracker.honor_104bfeb65f37112d11
     to: 'home'
   condition:
-    condition: time
-    after: '14:00:00'
-    before: '23:00:00'
+    condition: and
+    conditions:
+      - condition: time
+        after: '14:00:00'
+        before: '23:00:00'
+      - condition: or
+        conditions:
+          - condition: state
+            entity_id: 'device_tracker.oneplus_3'
+            state: 'not_home'
+          - condition: state
+            entity_id: 'device_tracker.honor_104bfeb65f37112d11'
+            state: 'not_home'
   action:
     service: scene.turn_on
     entity_id: scene.day
@@ -106,8 +116,15 @@
   hide_entity: false
   trigger:
     platform: state
-    entity_id: device_tracker.oneplus_3
+    entity_id: device_tracker.oneplus_3, device_tracker.honor_104bfeb65f37112d11
     to: 'not_home'
+  condition:
+    - condition: state
+      entity_id: 'device_tracker.oneplus_3'
+      state: 'not_home'
+    - condition: state
+      entity_id: 'device_tracker.honor_104bfeb65f37112d11'
+      state: 'not_home'
   action:
     service: light.turn_off
     data:
