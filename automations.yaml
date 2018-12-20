@@ -57,13 +57,12 @@
   hide_entity: true
   initial_state: 'on'
   trigger:
-   - platform: homeassistant
-     event: start
+    - platform: homeassistant
+      event: start
   action:
     service: frontend.set_theme
     data:
       name: default
-
 
 #####################################################
 #                 Welcome home
@@ -99,11 +98,8 @@
     after: '14:00:00'
     before: '23:00:00'
   action:
-    service: light.turn_on
-    data:
-      entity_id: group.lights
-      kelvin: 3000
-      brightness: 20
+    service: scene.turn_on
+    entity_id: scene.day
 
 # Turn off the lights
 - alias: 'Byebye lights'
