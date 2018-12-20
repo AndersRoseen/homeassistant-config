@@ -1,0 +1,25 @@
+#####################################################
+#                  Lights
+#####################################################
+- name: Day
+  entities:
+    group.lights:
+      state: true
+      kelvin: 3400
+      brightness: 255
+- name: Evening
+  entities:
+    group.lights:
+      state: true
+      kelvin: 2800
+      brightness: 150
+- name: Late evening
+  entities:
+    group.lights:
+      state: true
+      kelvin: 1900
+      brightness: 50
+- name: Night
+  entities:
+    group.lights:
+      state: false
