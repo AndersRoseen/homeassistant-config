@@ -14,3 +14,20 @@ lights_livingroom:
   name: Livingroom lights
   entities:
       - light.vardagsrum
+
+# Devices
+any_device:
+  name: Any household device
+  all: false
+  view: false
+  entities:
+    - device_tracker.oneplus_3
+    - device_tracker.honor_104bfeb65f37112d11
+
+all_devices:
+  name: All household devices
+  all: true
+  view: false
+  entities:
+    - device_tracker.oneplus_3
+    - device_tracker.honor_104bfeb65f37112d11
