@@ -114,6 +114,62 @@
       entity_id: group.lights
 
 #####################################################
+#                 Lights
+#####################################################
+- alias: 'Sunset lights'
+  hide_entity: false
+  trigger:
+    platform: sun
+    event: 'sunset'
+    offset: '-00:30:00'
+  condition:
+    condition: state
+    entity_id: group.any_device
+    state: 'home'
+  action:
+    service: scene.turn_on
+    entity_id: scene.day
+
+- alias: 'Evening lights'
+  hide_entity: false
+  trigger:
+    - platform: time
+      at: '19:00:00'
+  condition:
+    condition: state
+    entity_id: group.all_lights
+    state: 'on'
+  action:
+    service: scene.turn_on
+    entity_id: scene.evening
+
+- alias: 'Late evening lights'
+  hide_entity: false
+  trigger:
+    - platform: time
+      at: '21:00:00'
+  condition:
+    condition: state
+    entity_id: group.all_lights
+    state: 'on'
+  action:
+    service: scene.turn_on
+    entity_id: scene.late_evening
+
+- alias: 'Turn off lights'
+  hide_entity: false
+  trigger:
+    - platform: time
+      at: '23:00:00'
+  condition:
+    condition: state
+    entity_id: group.all_lights
+    state: 'on'
+  action:
+    service: scene.turn_on
+    entity_id: scene.night
+
+#####################################################
 #                  Wake up
 #####################################################
 #- alias: 'Good morning'
