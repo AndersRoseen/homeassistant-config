@@ -1,3 +1,13 @@
 script.spotify_music:
   friendly_name: 'Play'
   icon: mdi:play
+script.turn_on_lights:
+  icon: mdi:lightbulb-on-outline
+script.turn_off_lights:
+  icon: mdi:lightbulb-outline
+sensor.tradfri_remote_control:
+  hidden: true
+sensor.yr_wind_speed:
+  icon: mdi:arrow-top-right
+sensor.yr_humidity:
+  device_class: humidity
