@@ -26,6 +26,18 @@ views:
         title: Spotify
         entities:
           - media_player.spotify
+      - type: entities
+        title: Us
+        entities:
+          - device_tracker.oneplus_3
+          - device_tracker.honor_104bfeb65f37112d11
+      - type: entities
+        title: Current weather
+        entities:
+          - sensor.yrwthr
+          - sensor.yr_humidity
+          - sensor.yr_temperature
+          - sensor.yr_wind_speed
 
   - title: Music
     icon: mdi:music
