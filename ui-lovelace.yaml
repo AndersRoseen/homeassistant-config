@@ -38,6 +38,11 @@ views:
           - sensor.yr_humidity
           - sensor.yr_temperature
           - sensor.yr_wind_speed
+      - type: entities
+        title: Time
+        entities:
+          - sensor.date
+          - sensor.time
 
   - title: Music
     icon: mdi:music

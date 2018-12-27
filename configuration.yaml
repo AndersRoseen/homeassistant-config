@@ -75,6 +75,10 @@ sensor:
 #    lines: 14
 #    direction: 1
 #    sensor: binary_sensor.test
+  - platform: time_date
+    display_options:
+      - 'time'
+      - 'date'
 
 # Text to speech
 tts:
