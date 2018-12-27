@@ -106,9 +106,14 @@ input_select:
     options:
       - Morning Commute
       - Cinematic Chill-Out
-      - FUTURESYNTH
       - From a Smokey Bar
       - Piano in the Background
+      - Winnerbäck
+      - Akustisk Vinter
+      - Cooking Music
+      - Bruce
+      - On Point
+      - Sing-Along Indie
     icon: mdi:spotify
   spotify_source:
     name: 'Source:'
