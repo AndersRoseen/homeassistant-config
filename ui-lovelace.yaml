@@ -76,6 +76,16 @@ views:
           - scene.late_evening
           - scene.night
 
+  - title: Weather
+    icon: mdi:weather-partlycloudy
+    path: weather
+    cards:
+    - type: entities
+      entities:
+        - weather.dark_sky
+    - type: weather-forecast
+      entity: weather.dark_sky
+
   - title: Map
     icon: mdi:map
     panel: true
