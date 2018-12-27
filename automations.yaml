@@ -67,26 +67,6 @@
 #####################################################
 #                 Welcome home
 #####################################################
-# Play Spotify when coming home
-# - alias: 'Welcome home - Have some music'
-#   hide_entity: false
-#   trigger:
-#     platform: state
-#     entity_id: device_tracker.oneplus_3
-#     to: 'home'
-#   condition:
-#     platform: time
-#     after: '16:00:00'
-#     before: '23:00:00'
-#   action:
-#     service: media_player.play_media
-#     data:
-#       entity_id: media_player.spotify
-#       media_content_id: 'spotify:user:spotify:playlist:37i9dQZF1DX2MyUCsl25eb' # Morning Commute
-#       media_content_type: 'playlist'
-#       volume_level: '0.4'
-
-# First one home turns on the lights
 - alias: 'Enter lights'
   hide_entity: false
   trigger:
@@ -98,10 +78,22 @@
     after: '14:00:00'
     before: '23:00:00'
   action:
-    service: scene.turn_on
-    entity_id: scene.day
+    - service: scene.turn_on
+      entity_id: scene.day
+    - service: media_player.select_source
+      data:
+        entity_id: media_player.spotify
+        source: 'Hass.io'
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.spotify
+        volume_level: 0.6
+    - service: media_player.play_media
+      data:
+        entity_id: media_player.spotify
+        media_content_id: 'spotify:user:spotify:playlist:37i9dQZF1DX7K31D69s4M1' # Piano in the background
+        media_content_type: 'playlist'
 
-# Turn off the lights when all are out
 - alias: 'Exit lights'
   hide_entity: false
   trigger:
