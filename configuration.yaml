@@ -96,7 +96,7 @@ input_select:
     name: 'Source:'
     options:
       - Hass.io
-      - LENNY
+#      - LENNY
     initial: Hass.io
     icon: mdi:speaker-wireless
 

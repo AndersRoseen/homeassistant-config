@@ -38,9 +38,10 @@ spotify_music:
       data_template: 
         entity_id: media_player.spotify
         source: >
-          {% if is_state("input_select.spotify_source", "Hass.io") %} Hass.io
-          {% elif is_state("input_select.spotify_source", "LENNY") %} LENNY
-          {% endif %}
+          Hass.io
+#          {% if is_state("input_select.spotify_source", "Hass.io") %} Hass.io
+#          {% elif is_state("input_select.spotify_source", "LENNY") %} LENNY
+#          {% endif %}
     - service: media_player.play_media
       data_template:
         entity_id: media_player.spotify
