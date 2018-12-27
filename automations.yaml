@@ -191,3 +191,16 @@
 #    entity_id: light.bedroom
 #    data:
 #      transition: 900
+
+#####################################################
+#                   Spotify
+#####################################################
+- alias: 'Set Spotify Volume'
+  trigger:
+    platform: state
+    entity_id: input_number.spotify_volume
+  action:
+    service: media_player.volume_set
+    data_template:
+      entity_id: media_player.spotify
+      volume_level: '{{  states.input_number.spotify_volume.state  }}'

@@ -31,3 +31,11 @@ all_devices:
   entities:
     - device_tracker.oneplus_3
     - device_tracker.honor_104bfeb65f37112d11
+
+music_spotify:
+  name: Music
+  entities:
+  - input_select.spotify_playlist
+  - input_select.spotify_source
+  - script.spotify_music
+  - input_number.spotify_volume

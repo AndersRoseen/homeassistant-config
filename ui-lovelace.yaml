@@ -31,9 +31,16 @@ views:
     icon: mdi:music
     path: music
     cards:
+      - type: entities
+        entities:
+          - input_select.spotify_playlist
+          - input_select.spotify_source
+          - input_number.spotify_volume
+          - script.spotify_music
       - type: media-control
         title: Spotify
         entity: media_player.spotify
+
 
   - title: Lights
     icon: mdi:lightbulb-on
