@@ -97,3 +97,18 @@ views:
           - automation.enter_lights
           - automation.exit_lights
           - automation.test_notification
+      - type: entities
+        title: Links
+        entities:
+          - type: weblink
+            url: !secret router_url
+            icon: mdi:router-wireless
+            name: Router
+          - type: weblink
+            url: !secret ide_url
+            icon: mdi:code-braces
+            name: IDE
+          - type: weblink
+            url: !secret shopping_list_url
+            icon: mdi:wunderlist
+            name: Shopping list
