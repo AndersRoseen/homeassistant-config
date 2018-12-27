@@ -9,3 +9,15 @@ reload_automations:
   sequence:
     - alias: Reload-Automations
       service: automation.reload
+
+turn_on_lights:
+  alias: Turn on all lights
+  sequence:
+    - service: scene.turn_on
+      entity_id: scene.day
+
+turn_off_lights:
+  alias: Turn off all lights
+  sequence:
+    - service: scene.turn_on
+      entity_id: scene.night

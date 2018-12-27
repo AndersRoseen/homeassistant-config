@@ -19,24 +19,9 @@ views:
       - type: entities
         title: Lights
         entities:
-          - light.farstun
-          - light.koket
-          - light.vardagsrum
-      - type: entities
-        title: Automations
-        entities:
-          - automation.welcome_home_lights
-          - automation.byebye_lights
-          - automation.test_notification
-  - icon: mdi:map
-    panel: true
-    cards:
-    - type: map
-      entities:
-        - device_tracker.oneplus_3
-        - device_tracker.honor_104bfeb65f37112d11
-        - zone.home
-        - zone.work
+          - script.turn_on_lights
+          - script.turn_off_lights
+
   - icon: mdi:music
     path: music
     cards:
@@ -44,6 +29,7 @@ views:
         title: Spotify
         entities:
           - media_player.spotify
+
   - icon: mdi:lightbulb-on
     path: lights
     cards:
@@ -53,3 +39,30 @@ views:
           - light.farstun
           - light.koket
           - light.vardagsrum
+      - type: entities
+        title: Scenes
+        entities:
+          - scene.day
+          - scene.evening
+          - scene.late_evening
+          - scene.night
+
+  - icon: mdi:map
+    panel: true
+    cards:
+    - type: map
+      entities:
+        - device_tracker.oneplus_3
+        - device_tracker.honor_104bfeb65f37112d11
+        - zone.home
+        - zone.work
+
+  - icon: mdi:wrench
+    path: settings
+    cards:
+      - type: entities
+        title: Automations
+        entities:
+          - automation.enter_lights
+          - automation.exit_lights
+          - automation.test_notification
