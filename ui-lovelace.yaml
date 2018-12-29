@@ -65,8 +65,8 @@ views:
       - type: entities
         title: Lights
         entities:
-          - light.farstun
-          - light.koket
+          - light.vestibule
+          - light.kitchen
           - light.vardagsrum
       - type: entities
         title: Scenes
