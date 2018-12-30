@@ -65,9 +65,9 @@
       name: default
 
 #####################################################
-#                 Welcome home
+#                 Come-and-go
 #####################################################
-- alias: 'Enter lights'
+- alias: 'Enter'
   hide_entity: false
   trigger:
     platform: state
@@ -94,7 +94,7 @@
         media_content_id: 'spotify:user:spotify:playlist:37i9dQZF1DX7K31D69s4M1' # Piano in the background
         media_content_type: 'playlist'
 
-- alias: 'Exit lights'
+- alias: 'Exit'
   hide_entity: false
   trigger:
     platform: state

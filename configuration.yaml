@@ -84,6 +84,7 @@ sensor:
 weather:
   - platform: darksky
     api_key: !secret darksky_api_key
+    mode: daily
 
 # Text to speech
 tts:
