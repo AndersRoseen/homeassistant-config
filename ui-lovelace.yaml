@@ -131,6 +131,14 @@ views:
           - automation.evening_lights
           - automation.late_evening_lights
           - automation.turn_off_lights
+      - type: history-graph
+        title: Speedtest
+        hours_to_show: 120
+        entities:
+          - entity: sensor.speedtest_download
+            name: Download
+          - entity: sensor.speedtest_upload
+            name: Upload
       - type: entities
         title: Links
         entities:
