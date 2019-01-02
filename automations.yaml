@@ -101,9 +101,11 @@
     entity_id: group.any_device
     to: 'not_home'
   action:
-    service: light.turn_off
-    data:
-      entity_id: group.lights
+    - service: light.turn_off
+      data:
+        entity_id: group.lights
+    - service: media_player.media_pause
+      entity_id: media_player.spotify
 
 #####################################################
 #                 Lights
