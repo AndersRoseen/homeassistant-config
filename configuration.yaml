@@ -148,6 +148,16 @@ zone:
     longitude: !secret longitude_work
     radius: 150
     icon: mdi:briefcase
+  - name: School
+    latitude: !secret latitude_school
+    longitude: !secret longitude_school
+    radius: 150
+    icon: mdi:school
+  - name: Stocksund
+    latitude: !secret latitude_stocksund
+    longitude: !secret longitude_stocksund
+    radius: 150
+    icon: mdi:weight-pound
 
 # Device tracker
 device_tracker: !include device_tracker.yaml
