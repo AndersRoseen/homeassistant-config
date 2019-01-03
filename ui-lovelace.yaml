@@ -30,6 +30,7 @@ views:
               - device_tracker.oneplus_3
               - device_tracker.honor_104bfeb65f37112d11
               - device_tracker.7fcbfe5a
+              - sensor.device_oneplus_3
             state_filter:
               - home
             card: 
@@ -40,6 +41,7 @@ views:
               - device_tracker.oneplus_3
               - device_tracker.honor_104bfeb65f37112d11
               - device_tracker.7fcbfe5a
+              - sensor.device_oneplus_3
               - zone.home
               - zone.work
 
