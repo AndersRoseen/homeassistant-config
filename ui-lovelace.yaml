@@ -29,8 +29,6 @@ views:
             entities:
               - device_tracker.oneplus_3
               - device_tracker.honor_104bfeb65f37112d11
-              - device_tracker.7fcbfe5a
-              - sensor.device_oneplus_3
             state_filter:
               - home
             card: 
@@ -38,10 +36,8 @@ views:
               title: People at home
           - type: map
             entities:
-              - device_tracker.oneplus_3
               - device_tracker.honor_104bfeb65f37112d11
               - device_tracker.7fcbfe5a
-              - sensor.device_oneplus_3
               - zone.home
               - zone.work
 
@@ -94,6 +90,7 @@ views:
       - type: entities
         title: Scenes
         entities:
+          - scene.morning
           - scene.day
           - scene.evening
           - scene.late_evening
@@ -106,7 +103,8 @@ views:
     - type: weather-forecast
       entity: weather.dark_sky
     - type: history-graph
-      title: 'Last 24 hours'
+      title: 'Last 5 days'
+      hours_to_show: 120
       entities:
         - entity: sensor.yr_humidity
           name: Humidity
