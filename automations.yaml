@@ -128,11 +128,15 @@
   hide_entity: false
   trigger:
     - platform: time
-      at: '19:00:00'
+      at: '21:00:00'
   condition:
-    condition: state
-    entity_id: group.all_lights
-    state: 'on'
+    - condition: state
+      entity_id: group.all_lights
+      state: 'on'
+    - condition: numeric_state
+      entity_id: light.vardagsrum
+      value_template: '{% if states.light.vardagsrum.state == "on"  %}{{ states.light.vardagsrum.attributes.brightness }}{% else %}0{% endif %}'
+      above: 150
   action:
     service: scene.turn_on
     entity_id: scene.evening
@@ -141,11 +145,15 @@
   hide_entity: false
   trigger:
     - platform: time
-      at: '21:00:00'
+      at: '23:00:00'
   condition:
-    condition: state
-    entity_id: group.all_lights
-    state: 'on'
+    - condition: state
+      entity_id: group.all_lights
+      state: 'on'
+    - condition: numeric_state
+      entity_id: light.vardagsrum
+      value_template: '{% if states.light.vardagsrum.state == "on"  %}{{ states.light.vardagsrum.attributes.brightness }}{% else %}0{% endif %}'
+      above: 150
   action:
     service: scene.turn_on
     entity_id: scene.late_evening
@@ -154,7 +162,7 @@
   hide_entity: false
   trigger:
     - platform: time
-      at: '23:00:00'
+      at: '00:00:00'
   condition:
     condition: state
     entity_id: group.all_lights
