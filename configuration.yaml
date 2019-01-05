@@ -157,7 +157,7 @@ zone:
   - name: School
     latitude: !secret latitude_school
     longitude: !secret longitude_school
-    radius: 150
+    radius: 200
     icon: mdi:school
   - name: Stocksund
     latitude: !secret latitude_stocksund
