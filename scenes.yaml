@@ -1,6 +1,12 @@
 #####################################################
 #                  Lights
 #####################################################
+- name: Morning
+  entities:
+    group.lights:
+      state: true
+      kelvin: 3100
+      brightness: 125
 - name: Day
   entities:
     group.lights:
