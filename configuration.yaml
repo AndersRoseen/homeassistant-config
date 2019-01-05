@@ -122,15 +122,16 @@ input_select:
     name: 'Playlist:'
     options:
       - Morning Commute
-      - Cinematic Chill-Out
-      - From a Smokey Bar
       - Piano in the Background
       - Winnerbäck
+      - Soft by Lucia
       - Akustisk Vinter
       - Cooking Music
       - Bruce
       - On Point
       - Sing-Along Indie
+      - Cinematic Chill-Out
+      - From a Smokey Bar
     icon: mdi:spotify
   spotify_source:
     name: 'Source:'

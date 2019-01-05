@@ -7,24 +7,28 @@
       state: true
       kelvin: 3100
       brightness: 125
+      transition: 2
 - name: Day
   entities:
     group.lights:
       state: true
       kelvin: 3400
       brightness: 255
+      transition: 2
 - name: Evening
   entities:
     group.lights:
       state: true
       kelvin: 2800
       brightness: 150
+      transition: 2
 - name: Late evening
   entities:
     group.lights:
       state: true
       kelvin: 1900
       brightness: 50
+      transition: 2
 - name: Night
   entities:
     group.lights:

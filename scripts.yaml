@@ -16,17 +16,18 @@ turn_on_lights:
     - service: light.turn_on
       entity_id: group.all_lights
       data_template:
+        transition: 1
         brightness: >
           {% if states.sensor.time.state|string < "08:00:00" %} 50
-          {% elif states.sensor.time.state|string < "19:00:00" %} 255
-          {% elif states.sensor.time.state|string < "21:00:00" %} 150
-          {% elif states.sensor.time.state|string < "23:00:00" %} 50
+          {% elif states.sensor.time.state|string < "21:00:00" %} 255
+          {% elif states.sensor.time.state|string < "23:00:00" %} 150
+          {% elif states.sensor.time.state|string < "23:59:59" %} 50
           {% endif %}
         kelvin: >
           {% if states.sensor.time.state|string < "08:00:00" %} 1900
-          {% elif states.sensor.time.state|string < "19:00:00" %} 3400
-          {% elif states.sensor.time.state|string < "21:00:00" %} 2800
-          {% elif states.sensor.time.state|string < "23:00:00" %} 1900
+          {% elif states.sensor.time.state|string < "21:00:00" %} 3400
+          {% elif states.sensor.time.state|string < "23:00:00" %} 2800
+          {% elif states.sensor.time.state|string < "23:59:59" %} 1900
           {% endif %}
 
 turn_off_lights:
@@ -73,6 +74,7 @@ spotify_music:
           {% elif is_state("input_select.spotify_playlist", "Sing-Along Indie") %} spotify:user:spotify:playlist:37i9dQZF1DWYBF1dYDPlHw
           {% elif is_state("input_select.spotify_playlist", "Bruce") %} spotify:user:1167630638:playlist:0UTWPhucipbYy0UwiZzlow
           {% elif is_state("input_select.spotify_playlist", "Winnerbäck") %} spotify:user:lars_winnerb%C3%A4ck:playlist:0retzd2HXvXueEyGqwrt1t
+          {% elif is_state("input_select.spotify_playlist", "Soft by Lucia") %} spotify:user:1167630638:playlist:5XzcEPpHrr82bdKCWbZQhO
           {% endif %}
     - service: media_player.media_next_track  # Workaround for shuffle issue
       data:

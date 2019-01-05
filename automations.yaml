@@ -78,8 +78,7 @@
     after: '14:00:00'
     before: '23:00:00'
   action:
-    - service: scene.turn_on
-      entity_id: scene.day
+    - service: script.turn_on_lights
     - service: media_player.select_source
       data:
         entity_id: media_player.spotify
@@ -162,7 +161,7 @@
   hide_entity: false
   trigger:
     - platform: time
-      at: '00:00:00'
+      at: '23:59:59'
   condition:
     condition: state
     entity_id: group.all_lights
