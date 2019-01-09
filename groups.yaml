@@ -10,6 +10,7 @@ lights_hallway:
   entities:
       - light.vestibule
       - light.kitchen
+  icon: mdi:lightbulb
 lights_livingroom:
   name: Livingroom lights
   entities:
@@ -22,7 +23,7 @@ any_device:
   view: false
   entities:
     - sensor.device_oneplus_3
-    - device_tracker.honor_104bfeb65f37112d11
+    - sensor.device_honor_10
 
 all_devices:
   name: All household devices
@@ -30,7 +31,7 @@ all_devices:
   view: false
   entities:
     - sensor.device_oneplus_3
-    - device_tracker.honor_104bfeb65f37112d11
+    - sensor.device_honor_10
 
 # Music
 music_spotify:

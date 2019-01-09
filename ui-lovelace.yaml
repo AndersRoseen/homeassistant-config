@@ -36,8 +36,8 @@ views:
               title: People at home
           - type: map
             entities:
-              - device_tracker.honor_104bfeb65f37112d11
               - device_tracker.7fcbfe5a
+              - device_tracker.ueedu18505002624
               - zone.home
               - zone.work
 
@@ -68,6 +68,8 @@ views:
         entities:
           - type: section
             label: Hallway
+          - group.lights_hallway
+          - type: section
           - entity: light.vestibule
             secondary_info: last-changed
           - entity: light.kitchen
@@ -76,17 +78,6 @@ views:
             label: Living room
           - entity: light.vardagsrum
             secondary_info: last-changed
-      - type: entity-filter
-        show_empty: false
-        entities:
-          - light.vestibule
-          - light.kitchen
-          - light.vardagsrum
-        state_filter:
-          - on
-        card: 
-          type: glance
-          show_state: false
       - type: entities
         title: Scenes
         entities:

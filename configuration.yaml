@@ -72,6 +72,10 @@ sensor:
         value_template: >
           {{ states('device_tracker.7fcbfe5a') if is_state('device_tracker.oneplus_3','not_home') else states('device_tracker.oneplus_3') }}
         icon_template: mdi:human-handsup
+      device_honor_10:
+        value_template: >
+          {{ states('device_tracker.ueedu18505002624') if is_state('device_tracker.honor_104bfeb65f37112d11','not_home') else states('device_tracker.honor_104bfeb65f37112d11') }}
+        icon_template: mdi:human
   - platform: speedtest
     monitored_conditions:
       - ping
@@ -170,8 +174,8 @@ zone:
 device_tracker: !include device_tracker.yaml
 
 # Lights
-tradfri:
-  host: !secret tradfri_gateway_ip
+#tradfri:
+#  host: !secret tradfri_gateway_ip
 
 # Switches (test)
 switch: !include switches.yaml
