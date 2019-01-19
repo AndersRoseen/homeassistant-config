@@ -11,3 +11,8 @@ sensor.yr_wind_speed:
   icon: mdi:arrow-top-right
 sensor.yr_humidity:
   device_class: humidity
+
+sensor.device_oneplus_3:
+  entity_picture: /local/rabbit.png
+sensor.device_honor_10:
+  entity_picture: /local/koala.png

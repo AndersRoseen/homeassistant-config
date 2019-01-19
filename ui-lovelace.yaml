@@ -22,24 +22,20 @@ views:
         title: Spotify
         entities:
           - media_player.spotify
-      - type: vertical-stack
-        cards:
-          - type: entity-filter
-            show_empty: false
-            entities:
-              - device_tracker.oneplus_3
-              - device_tracker.honor_104bfeb65f37112d11
-            state_filter:
-              - home
-            card: 
-              type: glance
-              title: People at home
-          - type: map
-            entities:
-              - device_tracker.7fcbfe5a
-              - device_tracker.ueedu18505002624
-              - zone.home
-              - zone.work
+      - type: glance
+        entities:
+          - sensor.device_oneplus_3
+          - sensor.device_honor_10
+      - type: glance
+        title: Lights
+        show_state: false
+        entities:
+          - entity: light.vardagsrum
+            tap_action: toggle
+          - entity: light.vestibule
+            tap_action: toggle
+          - entity: light.kitchen
+            tap_action: toggle
 
   - title: Music
     icon: mdi:music
