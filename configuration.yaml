@@ -48,6 +48,10 @@ map:
 # Track the sun
 sun:
 
+# Lovelace
+lovelace:
+  mode: yaml
+
 # Sensors
 sensor:
   # Weather prediction
