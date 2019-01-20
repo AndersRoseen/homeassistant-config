@@ -13,21 +13,20 @@ views:
     icon: mdi:home
     path: home
     cards:
-      - type: entities
-        title: Lights
-        entities:
-          - script.turn_on_lights
-          - script.turn_off_lights
-      - type: entities
-        title: Spotify
-        entities:
-          - media_player.spotify
       - type: glance
         entities:
           - sensor.device_oneplus_3
           - sensor.device_honor_10
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - script.turn_on_lights
+          - script.turn_off_lights
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - media_player.spotify
       - type: glance
-        title: Lights
         show_state: false
         entities:
           - entity: light.vardagsrum
