@@ -43,6 +43,28 @@ turn_off_lights:
       entity_id: group.all_lights
 
 #####################################################
+#                  Who's home
+#####################################################
+msg_who_is_home:
+    sequence:
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.mpd
+          volume_level: '0.5'
+      - service: tts.google_say
+        data_template:
+          message: >
+            {% if is_state('group.all_devices', 'home') %}
+              Everyone is here.
+            {% elif is_state('sensor.device_oneplus_3', 'home') %}
+              Bunny is home, Koala is at {{ states('sensor.device_honor_10') }}.
+            {% elif is_state('sensor.device_honor_10', 'home') %}
+              Koala is home, Bunny is at {{ states('sensor.device_oneplus_3') }}.
+            {% else %}
+              Bunny is at {{ states('sensor.device_oneplus_3') }} and Koala is at {{ states('sensor.device_honor_10') }}.
+            {% endif %}
+
+#####################################################
 #                  Music
 #####################################################
 prepare_hassio_music:
