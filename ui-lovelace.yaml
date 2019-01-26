@@ -106,6 +106,7 @@ views:
     cards:
       - type: entities
         title: Automations
+        show_header_toggle: false
         entities:
           - type: section
             label: Come-and-go
@@ -117,6 +118,9 @@ views:
           - automation.evening_lights
           - automation.late_evening_lights
           - automation.turn_off_lights
+          - type: section
+            label: Alarm
+          - automation.good_morning
       - type: history-graph
         title: Speedtest
         hours_to_show: 120
