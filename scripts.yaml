@@ -1,3 +1,6 @@
+#####################################################
+#                 HA management
+#####################################################
 restart_ha:
   alias: Restart HomeAssistant
   sequence:
@@ -10,6 +13,9 @@ reload_automations:
     - alias: Reload-Automations
       service: automation.reload
 
+#####################################################
+#                    Lights
+#####################################################
 turn_on_lights:
   alias: Turn on all lights
   sequence:
@@ -33,8 +39,27 @@ turn_on_lights:
 turn_off_lights:
   alias: Turn off all lights
   sequence:
-    - service: scene.turn_on
-      entity_id: scene.night
+    - service: light.turn_off
+      entity_id: group.all_lights
+
+#####################################################
+#                  Music
+#####################################################
+prepare_hassio_music:
+  alias: Play music when entering
+  sequence:
+    - service: media_player.select_source  # Select Source
+      data:
+        entity_id: media_player.spotify
+        source: 'Hass.io'
+    - service: media_player.volume_set  # Set Volume
+      data:
+        entity_id: media_player.spotify
+        volume_level: 0.6
+    - service: media_player.shuffle_set  # Set Shuffle
+      data:
+        entity_id: media_player.spotify
+        shuffle: true
 
 spotify_music:
   alias: Play selected spotify playlist

@@ -79,14 +79,7 @@
     before: '23:00:00'
   action:
     - service: script.turn_on_lights
-    - service: media_player.select_source
-      data:
-        entity_id: media_player.spotify
-        source: 'Hass.io'
-    - service: media_player.volume_set
-      data:
-        entity_id: media_player.spotify
-        volume_level: 0.6
+    - service: script.prepare_hassio_music
     - service: media_player.play_media
       data:
         entity_id: media_player.spotify
@@ -173,19 +166,29 @@
 #####################################################
 #                  Wake up
 #####################################################
-#- alias: 'Good morning'
-#  hide_entity: false
-#  trigger:
-#    platform: sun
-#    event: sunrise
-#  condition:
-#    platform: time
-#    after: '07:00:00'
-#  action:
-#    service: tts.google_say
-#    data:
-#      message: 'Nu är det dags att gå upp. Klockan är {{ now() }}'
-#      language: 'sv'
+- alias: 'Good morning'
+  hide_entity: false
+  initial_state: 'off'
+  trigger:
+    platform: time
+    at: '08:00:00'
+  condition:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+    - condition: state
+      entity_id: group.any_device
+      state: home
+  action:
+    service: tts.google_say
+    data_template:
+      message: >
+        'Dags att gå upp. Klockan är {{ now().hour }} {{ now().minute }}'
+      language: 'sv'
 
 #####################################################
 #                  Go to bed
