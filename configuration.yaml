@@ -152,27 +152,7 @@ input_select:
 # Cloud
 #cloud:
 
-zone:
-  - name: Home
-    latitude: !secret latitude_home
-    longitude: !secret longitude_home
-    radius: 100
-    icon: mdi:home
-  - name: Work
-    latitude: !secret latitude_work
-    longitude: !secret longitude_work
-    radius: 150
-    icon: mdi:briefcase
-  - name: School
-    latitude: !secret latitude_school
-    longitude: !secret longitude_school
-    radius: 200
-    icon: mdi:school
-  - name: Stocksund
-    latitude: !secret latitude_stocksund
-    longitude: !secret longitude_stocksund
-    radius: 150
-    icon: mdi:weight-pound
+zone: !include zones.yaml
 
 # Device tracker
 device_tracker: !include device_tracker.yaml
