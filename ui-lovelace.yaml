@@ -75,6 +75,7 @@ views:
             secondary_info: last-changed
       - type: entities
         title: Scenes
+        show_header_toggle: false
         entities:
           - scene.morning
           - scene.day
@@ -131,6 +132,7 @@ views:
             name: Upload
       - type: entities
         title: Links
+        show_header_toggle: false
         entities:
           - type: weblink
             url: !secret router_url
