@@ -25,7 +25,7 @@ any_device:
     - sensor.device_oneplus_3
     - sensor.device_honor_10
 
-all_devices:
+all_our_devices:
   name: All household devices
   all: true
   view: false

@@ -54,7 +54,7 @@ msg_who_is_home:
       - service: tts.google_say
         data_template:
           message: >
-            {% if is_state('group.all_devices', 'home') %}
+            {% if is_state('group.all_our_devices', 'home') %}
               Everyone is here.
             {% elif is_state('sensor.device_oneplus_3', 'home') %}
               Bunny is home, Koala is at {{ states('sensor.device_honor_10') }}.
