@@ -1,0 +1,53 @@
+#####################################################
+#                      Weather
+#####################################################
+- platform: yr
+  monitored_conditions:
+    - symbol
+    - temperature
+    - humidity
+    - fog
+    - pressure
+    - precipitation
+    - windSpeed
+    - cloudiness
+- platform: template
+  sensors:
+    yrwthr:
+      value_template: '{%set list2 = "0","Clear sky","Fair","Partly cloudy","Cloudy","Rain showers","Rain showers and thunder","Sleet showers","Snow showers","Rain","Heavy rain","Heavy rain and thunder","Sleet","Snow","Snow and thunder","Fog","Sleet showers and thunder","Snow showers and thunder","Rain and thunder","Sleet and thunder","Light rain showers and thunder","Heavy rain showers and thunder","Light sleet showers and thunder","Heavy sleet showers and thunder","Light snow showers and thunder","Heavy snow showers and thunder","Light rain and thunder","Light sleet and thunder","Heavy sleet and thunder","Light snow and thunder","Heavy snow and thunder","Light rain showers","Heavy rain showers","Light sleet showers","Heavy sleet showers","Light snow showers","Heavy snow showers","Light rain","Light sleet","Heavy sleet","Light snow","Heavy snow"%}{{list2[states.sensor.yr_symbol.state|int]}}'
+      entity_picture_template: "{{ state_attr('sensor.yr_symbol','entity_picture') }}"
+
+
+#####################################################
+#               Members and devices
+#####################################################
+- platform: template
+  sensors:
+    device_oneplus_3:
+      friendly_name: !secret human1
+      value_template: >
+        {{ states('device_tracker.7fcbfe5a') if is_state('device_tracker.oneplus_3','not_home') else states('device_tracker.oneplus_3') }}
+    device_honor_10:
+      friendly_name: !secret human2
+      value_template: >
+        {{ states('device_tracker.ueedu18505002624') if is_state('device_tracker.honor_104bfeb65f37112d11','not_home') else states('device_tracker.honor_104bfeb65f37112d11') }}
+
+    human1:
+      value_template: !secret human1
+    human2:
+      value_template: !secret human2
+
+
+#####################################################
+#                 Misc
+#####################################################
+- platform: speedtest
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+- platform: random
+- platform: time_date
+  display_options:
+    - 'time'
+    - 'date'
