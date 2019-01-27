@@ -125,6 +125,8 @@ views:
           - type: section
             label: Alarm
           - automation.good_morning
+          - automation.arrival_bunny
+          - automation.arrival_koala
       - type: history-graph
         title: Speedtest
         hours_to_show: 120

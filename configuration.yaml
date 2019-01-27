@@ -73,13 +73,17 @@ sensor:
   - platform: template
     sensors:
       device_oneplus_3:
-        friendly_name: !secret name1
+        friendly_name: !secret human1
         value_template: >
           {{ states('device_tracker.7fcbfe5a') if is_state('device_tracker.oneplus_3','not_home') else states('device_tracker.oneplus_3') }}
       device_honor_10:
-        friendly_name: !secret name2
+        friendly_name: !secret human2
         value_template: >
           {{ states('device_tracker.ueedu18505002624') if is_state('device_tracker.honor_104bfeb65f37112d11','not_home') else states('device_tracker.honor_104bfeb65f37112d11') }}
+      human1:
+        value_template: !secret human1
+      human2:
+        value_template: !secret human2
   - platform: speedtest
     monitored_conditions:
       - ping

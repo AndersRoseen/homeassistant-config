@@ -104,6 +104,48 @@
     - service: media_player.media_pause
       entity_id: media_player.spotify
 
+- alias: 'Arrival Bunny'
+  hide_entity: false
+  trigger:
+    platform: state
+    entity_id: sensor.device_oneplus_3
+    to: 'home'
+  condition:
+    condition: time
+    after: '09:00:00'
+    before: '23:00:00'
+  action:
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.mpd
+        volume_level: '0.5'
+    - service: tts.google_say
+      data_template:
+        message: >
+          {{ states.sensor.human1.state }} har kommit hem!
+        language: 'sv'
+
+- alias: 'Arrival Koala'
+  hide_entity: false
+  trigger:
+    platform: state
+    entity_id: sensor.device_honor_10
+    to: 'home'
+  condition:
+    condition: time
+    after: '09:00:00'
+    before: '23:00:00'
+  action:
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.mpd
+        volume_level: '0.5'
+    - service: tts.google_say
+      data_template:
+        message: >
+          {{ states.sensor.human2.state }} har kommit hem!
+        language: 'sv'
+
 #####################################################
 #                 Lights
 #####################################################
