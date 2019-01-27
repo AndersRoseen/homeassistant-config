@@ -58,7 +58,11 @@ views:
     path: lights
     cards:
       - type: entities
-        title: Lights
+        show_header_toggle: false
+        entities:
+          - script.turn_on_lights
+          - script.turn_off_lights
+      - type: entities
         show_header_toggle: false
         entities:
           - type: section
@@ -74,7 +78,6 @@ views:
           - entity: light.vardagsrum
             secondary_info: last-changed
       - type: entities
-        title: Scenes
         show_header_toggle: false
         entities:
           - scene.morning
