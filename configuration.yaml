@@ -48,6 +48,16 @@ map:
 # Track the sun
 sun:
 
+# System health (i)
+system_health:
+
+# Speed test
+speedtestdotnet:
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+
 # Lovelace
 lovelace:
   mode: yaml
