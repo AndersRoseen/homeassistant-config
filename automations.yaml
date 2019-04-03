@@ -160,14 +160,18 @@
     entity_id: group.any_device
     state: 'home'
   action:
-    service: scene.turn_on
-    entity_id: scene.day
+    service: light.turn_on
+    data:
+        entity_id: light.vardagsrum
+        brightness: 255
+        kelvin: 3400
+        transition: 2
 
 - alias: 'Evening lights'
   hide_entity: false
   trigger:
     - platform: time
-      at: '21:00:00'
+      at: '19:00:00'
   condition:
     - condition: state
       entity_id: group.all_lights
@@ -184,7 +188,7 @@
   hide_entity: false
   trigger:
     - platform: time
-      at: '23:00:00'
+      at: '21:00:00'
   condition:
     - condition: state
       entity_id: group.all_lights
