@@ -171,7 +171,7 @@
   hide_entity: false
   trigger:
     - platform: time
-      at: '19:00:00'
+      at: '20:00:00'
   condition:
     - condition: state
       entity_id: group.all_lights
@@ -188,7 +188,7 @@
   hide_entity: false
   trigger:
     - platform: time
-      at: '21:00:00'
+      at: '23:00:00'
   condition:
     - condition: state
       entity_id: group.all_lights
