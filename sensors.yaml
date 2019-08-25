@@ -23,11 +23,11 @@
 #####################################################
 - platform: template
   sensors:
-    device_oneplus_3:
+    device_oneplus7:
       friendly_name: !secret human1
       value_template: >
-        {{states('device_tracker.oneplus_3')}}
-#        {{ states('device_tracker.7fcbfe5a') if is_state('device_tracker.oneplus_3','not_home') else states('device_tracker.oneplus_3') }}
+        {{states('device_tracker.oneplus7')}}
+#        {{ states('device_tracker.7fcbfe5a') if is_state('device_tracker.oneplus7','not_home') else states('device_tracker.oneplus7') }}
     device_honor_10:
       friendly_name: !secret human2
       value_template: >

@@ -56,12 +56,12 @@ msg_who_is_home:
           message: >
             {% if is_state('group.all_our_devices', 'home') %}
               Everyone is here.
-            {% elif is_state('sensor.device_oneplus_3', 'home') %}
+            {% elif is_state('sensor.device_oneplus7', 'home') %}
               Bunny is home, Koala is at {{ states('sensor.device_honor_10') }}.
             {% elif is_state('sensor.device_honor_10', 'home') %}
-              Koala is home, Bunny is at {{ states('sensor.device_oneplus_3') }}.
+              Koala is home, Bunny is at {{ states('sensor.device_oneplus7') }}.
             {% else %}
-              Bunny is at {{ states('sensor.device_oneplus_3') }} and Koala is at {{ states('sensor.device_honor_10') }}.
+              Bunny is at {{ states('sensor.device_oneplus7') }} and Koala is at {{ states('sensor.device_honor_10') }}.
             {% endif %}
 
 #####################################################

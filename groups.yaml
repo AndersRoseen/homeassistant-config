@@ -22,7 +22,7 @@ any_device:
   all: false
   view: false
   entities:
-    - sensor.device_oneplus_3
+    - sensor.device_oneplus7
     - sensor.device_honor_10
 
 all_our_devices:
@@ -30,7 +30,7 @@ all_our_devices:
   all: true
   view: false
   entities:
-    - sensor.device_oneplus_3
+    - sensor.device_oneplus7
     - sensor.device_honor_10
 
 # Music

@@ -108,7 +108,7 @@
   hide_entity: false
   trigger:
     platform: state
-    entity_id: sensor.device_oneplus_3
+    entity_id: sensor.device_oneplus7
     to: 'home'
   condition:
     condition: time
